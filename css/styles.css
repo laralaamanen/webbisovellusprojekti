@@ -1,30 +1,68 @@
 body {
-    background-color: red; /* Punainen tausta */
-    color: white; /* Valkoinen teksti */
+    /* tausta */
+    background-color: white; /* keltainen tausta */
+
+    /* tekstin asetukset */
+    font-family: Georgia, serif;
+    font-size: 16px;
+    letter-spacing: 0px;
+    word-spacing: 2px;
+    color: #000000; /* musta teksti */
 }
 
 header {
-    background-color: black; /* Musta yläosa */
-    color: red; /* Punainen teksti */
+    background-color: rgb(217, 171, 80);
+    /* valkoinen yläosa */
+    color: rgb(9, 9, 9);
+    /* musta teksti */
     padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+
+}
+
+.main-navbar {
+    background-color: rgb(244, 244, 116);
     text-align: center;
 }
 
-nav {
-    background-color: black; /* Musta tausta */
-}
-
-nav ul {
+.main-navbar ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav ul li {
+.main-navbar ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav a {
-    color: red; /* Punainen teksti */
+.main-navbar a {
+    color: rgb(8, 8, 8);
     text-decoration: none;
+}
+
+.navbar2 a {
+    text-decoration: none; /* Poistaa korostuksen linkeistä */
+    color: #fff; /* Linkkien väri */
+    font-weight: bold; /* Lihavoi tekstin */
+}
+
+h2 {
+    background-color: rgb(238, 227, 227); /* Musta tausta otsikoille */
+    color: rgb(11, 11, 11); /* Punainen teksti otsikoille */
+    padding: 5px;
+    font-size: 20px;
+    margin: 0;
+    display: inline-block; /* Lisätään otsikot omiin laatikoihinsa */
+    border: 1px solid #888; /* Reunus otsikoiden ympärillä */
+    margin-right: 10px; /* Lisätään välistystä otsikoiden väliin */
+    border-radius: 10px;
+}
+
+section {
+    background-color: rgb(217, 171, 80);
+    border: 1px solid #888; /* Harmaa reunus */
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
 }
