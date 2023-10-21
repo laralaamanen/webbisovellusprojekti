@@ -1,7 +1,30 @@
+img {
+    max-width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Kuvien tyyli normaalitilassa */
+.kuvatiedot figure {
+    width: 280px;
+    height: 280px;
+    margin: 10px;
+    overflow: hidden;
+    transition: all 0.5s; /* 0.5s siirtymä actioniin hiiren mennessä kuvan päälle */
+}
+
+/* Kuvien tyyli hover-tilassa */
+.kuvatiedot figure:hover {
+    width: 300px;
+    height: 300px;
+}
+
+/* Gridin asetukset */
 .kuvat {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px; 
 }
 
 .kuvatiedot {
@@ -13,16 +36,22 @@
     align-items: center;
 }
 
-figure {
-    margin: 0;
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    cursor: pointer;
+.grid-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
 }
 
+/* Ponnahdusikkunan säädöt */
 figcaption {
     display: none;
 }

@@ -1,7 +1,8 @@
+/* Ponnahdusikkunan toiminnallisuus */
 const kuvat = document.querySelectorAll('figure');
 const lightbox = document.querySelector('.lightbox');
-const lightboxKuva = document.querySelector('.lightbox img');
-const lightboxKuvaus = document.querySelector('.lightbox p'); // Lisätty kuvauksen elementti
+const lightboxKuva = document.querySelector('.lightbox img'); // kuva
+const lightboxKuvaus = document.querySelector('.lightbox p'); // kuvateksti
 const lightboxSulje = document.querySelector('#lightbox-sulje');
 
 kuvat.forEach(kuva => {

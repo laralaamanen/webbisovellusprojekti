@@ -1,3 +1,5 @@
+/* Tietovisan toiminnallisuus */
+/* Tietovisan kysymykset */ 
 const kysymykset = [
     {
         kysymys: "Mikä on Sisilian pääkaupunki?",
@@ -60,11 +62,12 @@ const pisteetElementti = document.getElementById("pisteet");
 const seuraavaKysymysButton = document.getElementById("seuraava-kysymys");
 const teeUudestaanButton = document.getElementById("tee-uudestaan");
 
+/* Esittää kysymyksen */
 function näytäKysymys() {
     const kysymys = kysymykset[nykyinenKysymys];
     kysymysElementti.textContent = kysymys.kysymys;
     vaihtoehdotElementti.innerHTML = "";
-
+/* Esittää vaihtoehdot */
     kysymys.vaihtoehdot.forEach((vaihtoehto) => {
         const li = document.createElement("li");
         const vastausLaatikko = document.createElement("div");
@@ -75,7 +78,7 @@ function näytäKysymys() {
         vaihtoehdotElementti.appendChild(li);
     });
 }
-
+/* vastauksen valitseminen ja palauttaa tarkistuksessa */
 function valitseVastaus(valittuVastaus) {
     if (nykyinenKysymys < kysymykset.length) {
         const oikeaVastaus = kysymykset[nykyinenKysymys].oikeaVastaus;
@@ -102,10 +105,9 @@ näytäKysymys();
 seuraavaKysymysButton.addEventListener("click", näytäKysymys);
 
 
-// Muuta "Seuraava kysymys" -napin kuuntelijaa seuraavasti
+/* Kysymyksen ohittaminen */
 seuraavaKysymysButton.addEventListener("click", () => {
     if (nykyinenKysymys < kysymykset.length - 1) {
-        // Ohita kysymys
         nykyinenKysymys++;
         kysymysNumero++;
 
@@ -115,15 +117,14 @@ seuraavaKysymysButton.addEventListener("click", () => {
     } else {
         // Visa päättyi, piilota "Seuraava kysymys" -nappi
         seuraavaKysymysButton.style.display = "none";
-        teeUudestaanButton.style.display = "block"; // Näytä "Tee uudestaan" -nappi
+        teeUudestaanButton.style.display = "block"; // Näyttää "Tee uudestaan" -napin (toimii vain kerran kierroksella)
     }
 });
-// Lisää kuuntelija "Tee uudestaan" -napille
+/* Tee uudestaan */
 teeUudestaanButton.addEventListener("click", () => {
-    // Aloita visa alusta
     nykyinenKysymys = 0;
     pisteet = 0;
-    kysymysNumero = 1; // Alkuarvo kysymysNumerolle
+    kysymysNumero = 1;
     näytäKysymys();
     seuraavaKysymysButton.style.display = "block"; // Näytä "Seuraava kysymys" -nappi uuden kierroksen alussa
     teeUudestaanButton.style.display = "none"; // Piilota "Tee uudestaan" -nappi
